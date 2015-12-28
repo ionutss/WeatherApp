@@ -1,33 +1,36 @@
-<ion-view view-title="5-day forecast" ng-controller="ForecastCtrl">
+<ion-view view-title="Daily forecast" ng-controller="ForecastCtrl" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+        <a class="button" style="display: flex;" ng-click="openPopover($event)"><h5 class="ion-location">   {{vm.location}}</h5></a>
+    </ion-nav-buttons>
     <ion-content class="has-header">
         <div class="list">
-	        <div ng-repeat="day in vm.forecast.list">
-	        	<div class="item item-divider item-energized">
-	        		{{day.dt}}
-	        	</div>
-	        	<div class="row">
-	        		<div class="col col-25">Day</div>
-	        		<div class="col col-25">{{day.temp.day}} °C</div>
-	        		<div class="col col-25">Night</div>
-	        		<div class="col col-25">{{day.temp.night}} °C</div>
-	        	</div>
-	          	<a class="item item-icon-right" ng-repeat="team in division.divisionStandings" href="#/app/teams/{{team.id}}">
+            <div ng-repeat="day in vm.forecast.list">
+                <div class="item item-divider item-energized">
+                    {{day.dt}}
+                </div>
+                <div class="row">
+                    <div class="col col-25">Day</div>
+                    <div class="col col-25">{{day.temp.day}} °C</div>
+                    <div class="col col-25">Night</div>
+                    <div class="col col-25">{{day.temp.night}} °C</div>
+                </div>
+                <a class="item item-icon-right" ng-repeat="team in division.divisionStandings" href="#/app/teams/{{team.id}}">
 	          		{{team.teamName}} ({{team.wins}}-{{team.losses}})
 	          		<i class="icon ion-chevron-right icon-accessory"></i>
 	          	</a>
-	        </div>
+            </div>
         </div>
-
-        <ion-tabs class="tabs-energized ">
-		<ion-tab title="Now"  href="#/app/home">
-			<ion-nav-view name="tab-leagues"></ion-nav-view>
-		</ion-tab>
-		<ion-tab title="Forecast"  href="#/app/forecast">
-			<ion-nav-view name="tab-myteams"></ion-nav-view>
-		</ion-tab>
-		<ion-tab title="Maps"  href="#/home/myteams">
-			<ion-nav-view name="tab-myteams"></ion-nav-view>
-		</ion-tab>
-	</ion-tabs>
     </ion-content>
+    <ion-tabs class="tabs-calm ">
+        <ion-tab title="Now" href="#/app/home">
+            <ion-nav-view name="tab-leagues"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Hourly" href="#/app/hourly">
+            <ion-nav-view name="tab-myteams"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Daily" href="#/app/forecast">
+            <ion-nav-view name="tab-myteams"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
 </ion-view>

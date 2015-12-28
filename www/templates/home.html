@@ -1,54 +1,59 @@
-<ion-view ng-controller="HomeCtrl">
-  <ion-nav-buttons side="left">
-    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-    <a class="button" style="display: flex;" ng-click="openPopover($event)"><h5 class="ion-location">   {{vm.location}}</h5></a>
-  </ion-nav-buttons>
-  <ion-nav-buttons side="primary" >
-  
-</ion-nav-buttons>
-  <ion-nav-buttons side="right">
-    <button ng-click="share()" class="button button-icon icon ion-android-share-alt"></button>
-  </ion-nav-buttons>
-  <ion-content class="has-header">
-  <br><br><br><br><br><br>
-    <div class="row" style="text-align: center;">
-    	<div class="col col-100" style="font-size: 80px;">{{vm.tempC}} °C</div>
-    </div>
-    <br><br><br>
-    <div class="row">
-    	<img class="" style="margin-left: auto; margin-right:auto;" ng-src="{{vm.iconUrl}}">
-    </div>
-    <div class="row" style="text-align: center;">
-    	<div class="col col-100"><h2>{{vm.weather.weather[0].description}}</h2></div>
-    </div>
-    <br><br><br>
-    <div class="row">
-    	<div class="col col-25">Clouds</div>
-    	<div class="col col-25">{{vm.weather.clouds.all}}%</div>
-    	<div class="col col-25">Wind</div>
-    	<div class="col col-25">{{vm.weather.wind.speed}} m/s</div>
-    </div>
-    <div class="row">
-    	<div class="col col-25">Humidity</div>
-    	<div class="col col-25">{{vm.weather.main.humidity}}%</div>
-    	<div class="col col-25">Pressure</div>
-    	<div class="col col-25">{{vm.weather.main.pressure}} mb</div>
-    </div>
-    <div class="row">
-    	<div class="col col-25">Visibility</div>
-    	<div class="col col-25">2 km</div>
-    </div>
-	<ion-tabs class="tabs-energized ">
-		<ion-tab title="Now"  href="#/app/home">
-			<ion-nav-view name="tab-leagues"></ion-nav-view>
-		</ion-tab>
-		<ion-tab title="Forecast"  href="#/app/forecast">
-			<ion-nav-view name="tab-myteams"></ion-nav-view>
-		</ion-tab>
-		<ion-tab title="Maps"  href="#/home/myteams">
-			<ion-nav-view name="tab-myteams"></ion-nav-view>
-		</ion-tab>
-	</ion-tabs>
-  </ion-content>
-
+<ion-view ng-controller="HomeCtrl" view-title="" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+        <a class="button" style="display: flex;" ng-click="openPopover($event)"><h5 class="ion-location">   {{vm.location}}</h5></a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="primary">
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button ng-click="share()" class="button button-icon icon ion-android-share-alt"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row" style="text-align: center;">
+            <div class="col col-100" style="font-size: 80px;">{{vm.tempC}} °C</div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <img class="" style="margin-left: auto; margin-right:auto;" ng-src="{{vm.iconUrl}}">
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col col-100">
+                <h2>{{vm.weather.weather[0].description}}</h2></div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col col-25">Clouds</div>
+            <div class="col col-25">{{vm.weather.clouds.all}}%</div>
+            <div class="col col-25">Wind</div>
+            <div class="col col-25">{{vm.weather.wind.speed}} m/s</div>
+        </div>
+        <div class="row">
+            <div class="col col-25">Humidity</div>
+            <div class="col col-25">{{vm.weather.main.humidity}}%</div>
+            <div class="col col-25">Pressure</div>
+            <div class="col col-25">{{vm.weather.main.pressure}} mb</div>
+        </div>
+        <div class="row">
+            <div class="col col-25">Visibility</div>
+            <div class="col col-25">2 km</div>
+        </div>
+    </ion-content>
+    <ion-tabs class="tabs-calm" style="position: fixed: !important">
+        <ion-tab title="Now" href="#/app/home">
+            <ion-nav-view name="tab-leagues"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Hourly" href="#/app/hourly">
+            <ion-nav-view name="tab-myteams"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Daily" href="#/app/forecast">
+            <ion-nav-view name="tab-myteams"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
 </ion-view>
