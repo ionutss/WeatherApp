@@ -1,0 +1,18 @@
+<ion-view ng-controller="SettingsCtrl">
+	<ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+
+	<ion-content class="has-header">
+		<div class="list">
+			<div class="item">
+			Measurement unit
+			<div class="button-bar">
+      <a class="button button-item1" ng-class="{'button-positive' : isActive('item1')}" ng-click="setActive('item1')">°F</a>
+      <a class="button button-item2" ng-class="{'button-positive' : isActive('item2')}" ng-click="setActive('item2')">°C</a>
+    <div>
+			</div>
+		</div>
+	</ion-content>
+
+</ion-view>

@@ -1,1 +1,54 @@
 /* Empty. Add your own CSS if you like */
+.popover {
+    height: auto !important;
+}
+.popover ion-header-bar {
+    position: relative;
+}
+.popover ion-content {
+    top: 0;
+    position: relative;
+}
+
+body .button-bar {
+  padding: 0px 30px 0 30px;
+  width: 200px;
+  display: inline-flex;
+}
+body .button-bar .button {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  background: none;
+  border-color: #145fd7;
+  border-width: 2px;
+}
+body .button-bar .button:first-child {
+  border-radius: none;
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-top-left-radius: 8px;
+  border-top-left-radius: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+body .button-bar .button-positive {
+  background-color: #145fd7;
+}
+body .button-bar .button-item1 {
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-top-left-radius: 8px;
+  border-top-left-radius: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-right: none;
+}
+body .button-bar .button-item2 {
+  -moz-border-radius-topright: 8px;
+  -webkit-border-top-right-radius: 8px;
+  border-top-right-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-left: none;
+}

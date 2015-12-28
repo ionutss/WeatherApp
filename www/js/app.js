@@ -39,6 +39,24 @@ angular.module('weather-app', ['ionic', 'ngCordova'])
           templateUrl: "templates/home.html"
         }
       }
+    })
+
+    .state('app.settings', {
+      url: "/settings",
+      views: {
+        "home": {
+          templateUrl: "templates/settings.html"
+        }
+      }
+    })
+
+    .state('app.forecast', {
+      url: "/forecast",
+      views: {
+        "home": {
+          templateUrl: "templates/forecast.html"
+        }
+      }
     });
 
     $urlRouterProvider.otherwise('/app/home');
