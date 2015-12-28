@@ -1,0 +1,18 @@
+<ion-view view-title="Feedback" ng-controller="FeedbackCtrl" hide-back-button="true">
+	<ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+	<ion-content has-subheader="false">
+	<div class="row" ><h4 class="col col-100" style="text-align: center!important;">Please give us your feedback</h4></div>
+	
+	<br><br>
+	<div class="row">
+		<textarea ng-model="vm.feedback" rows="10" class="col col-100" type="text" style="background: white; border: 1px solid grey;" ></textarea>
+	</div>
+	<br>
+	<div class="row">
+		<button class="button button-stable col col-80 col-offset-10" ng-click="send()">Send feedback</button>
+	</div>
+
+	</ion-content>
+</ion-view>

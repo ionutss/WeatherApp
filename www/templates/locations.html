@@ -1,0 +1,29 @@
+<ion-view view-title="Locations" ng-controller="LocationsCtrl" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="card">
+            <div class="item item-divider">
+                Your current location
+            </div>
+            <div class="item item-text-wrap item-icon-left">
+                {{vm.currentPosition}}  <i class="icon ion-ios-location"></i>
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-divider">
+                Other locations
+            </div>
+            <div class="list card">
+            	<div ng-repeat="location in vm.savedLocations">
+            		<a href="#" class="item">{{location}}</a>
+            	</div>
+            </div>
+        </div>
+        <div class="row">
+        	<button class="button button-calm col col-80 col-offset-10" ng-click="showPopup()">Search for a new location</button>
+        </div>
+        
+    </ion-content>
+</ion-view>

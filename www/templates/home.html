@@ -8,7 +8,7 @@
     <ion-nav-buttons side="right">
         <button ng-click="share()" class="button button-icon icon ion-android-share-alt"></button>
     </ion-nav-buttons>
-    <ion-content class="has-header">
+    <ion-content class="has-header w-bck" style="color: white;" >
         <br>
         <br>
         <br>
@@ -21,31 +21,36 @@
         <div class="row">
             <img class="" style="margin-left: auto; margin-right:auto;" ng-src="{{vm.iconUrl}}">
         </div>
-        <div class="row" style="text-align: center;">
+        <div class="row" style="text-align: center; color:white;">
             <div class="col col-100">
-                <h2>{{vm.weather.weather[0].description}}</h2></div>
+                <h2 style="color: white;">{{vm.weather.weather[0].description}}</h2></div>
         </div>
         <br>
         <br>
         <br>
         <div class="row">
-            <div class="col col-25">Clouds</div>
-            <div class="col col-25">{{vm.weather.clouds.all}}%</div>
-            <div class="col col-25">Wind</div>
+            <span class="col col-10 icon icon-left ion-android-cloud w"></span>
+            <div class="col col-20">Clouds</div>
+            <div class="col col-20">{{vm.weather.clouds.all}}%</div>
+            <span class="col col-10 icon icon-left ion-shuffle w"></span>
+            <div class="col col-20">Wind</div>
             <div class="col col-25">{{vm.weather.wind.speed}} m/s</div>
         </div>
         <div class="row">
-            <div class="col col-25">Humidity</div>
-            <div class="col col-25">{{vm.weather.main.humidity}}%</div>
-            <div class="col col-25">Pressure</div>
+            <span class="col col-10 icon icon-left ion-waterdrop w"></span>
+            <div class="col col-20">Humidity</div>
+            <div class="col col-20">{{vm.weather.main.humidity}}%</div>
+            <i class="col col-10 fa fa-long-arrow-down" style="font-size:25px;"></i>
+            <div class="col col-20">Pressure</div>
             <div class="col col-25">{{vm.weather.main.pressure}} mb</div>
         </div>
         <div class="row">
-            <div class="col col-25">Visibility</div>
-            <div class="col col-25">2 km</div>
+            <span class="col col-10 fa fa-eye " style="font-size:25px;"></span>
+            <div class="col col-20">Visibility</div>
+            <div class="col col-20">2 km</div>
         </div>
     </ion-content>
-    <ion-tabs class="tabs-calm" style="position: fixed: !important">
+    <ion-tabs class="tabs-stable" style="position: fixed: !important">
         <ion-tab title="Now" href="#/app/home">
             <ion-nav-view name="tab-leagues"></ion-nav-view>
         </ion-tab>

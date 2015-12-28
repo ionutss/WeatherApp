@@ -1,19 +1,20 @@
 <ion-view view-title="Daily forecast" ng-controller="ForecastCtrl" hide-back-button="true">
     <ion-nav-buttons side="left">
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-        <a class="button" style="display: flex;" ng-click="openPopover($event)"><h5 class="ion-location">   {{vm.location}}</h5></a>
     </ion-nav-buttons>
-    <ion-content class="has-header">
+    <ion-content class="has-header w-bck">
         <div class="list">
             <div ng-repeat="day in vm.forecast.list">
-                <div class="item item-divider item-energized">
+                <div class="item item-divider item-dark" style="font-size: 20px !important; opacity: 0.8;">
                     {{day.dt}}
                 </div>
                 <div class="row">
-                    <div class="col col-25">Day</div>
-                    <div class="col col-25">{{day.temp.day}} °C</div>
-                    <div class="col col-25">Night</div>
-                    <div class="col col-25">{{day.temp.night}} °C</div>
+                    <div class="col col-15">Day</div>
+                    <i class="icon icon-left ion-thermometer w"></i>
+                    <div class="col col-15 xs">{{day.temp.day | number:1}} °C</div>
+                    <div class="col col-15 col-offset-15">Night</div>
+                    <i class="icon icon-left ion-thermometer w"></i>
+                    <div class="col col-25 xs">{{day.temp.night | number:1}} °C</div>
                 </div>
                 <a class="item item-icon-right" ng-repeat="team in division.divisionStandings" href="#/app/teams/{{team.id}}">
 	          		{{team.teamName}} ({{team.wins}}-{{team.losses}})
@@ -22,7 +23,7 @@
             </div>
         </div>
     </ion-content>
-    <ion-tabs class="tabs-calm ">
+    <ion-tabs class="tabs-stable ">
         <ion-tab title="Now" href="#/app/home">
             <ion-nav-view name="tab-leagues"></ion-nav-view>
         </ion-tab>

@@ -11,16 +11,26 @@ angular.module('weather-app')
         var geoPos;
 
         $scope.share = function() {
-            $ionicPopup.confirm({
-                    title: 'Share screen!',
-                    template: 'You are about to share a screenshot on social media.'
-                })
-                .then(function(res) {
-                    if (res) {
-                        $cordovaSocialSharing.share("bal bla", "awala", null, "http://asd");
-                    }
-                });
+            var imageLink;
+            console.log('Calling from CapturePhoto');
+            navigator.screenshot.save(function(error, res) {
+                if (error) {
+                    console.error(error);
+                } else {
+                    imageLink = res.filePath;
+                    $ionicPopup.confirm({
+                            title: 'Share screen!',
+                            template: 'Screenshot captured succesfully. Do you want to share it?'
+                        })
+                        .then(function(res) {
+                            if (res) {
+                                $cordovaSocialSharing.share(null, null, 'file://' + imageLink, null);
+                            }
+                        });
+                }
+            }, 'jpg', 50, 'myScreenShot');
         };
+
 
         $ionicPopover.fromTemplateUrl('templates/location-popover.html', {
             scope: $scope

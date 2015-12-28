@@ -61,3 +61,26 @@ body .button-bar .button-item2 {
 .scroll {
   height: 100%;
 }
+
+.w{
+  font-size:30px;
+}
+.xs {
+  font-size:20px;
+}
+
+.w-bck {
+  background-image: url('05.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: white !important;
+}
+
+ion-tabs {
+  //opacity: 0.6 !important;
+  color: white !important;
+}
+
+ion-header-bar {
+  opacity: 1 !important;
+}

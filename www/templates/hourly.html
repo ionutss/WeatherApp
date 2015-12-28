@@ -1,0 +1,31 @@
+<ion-view view-title="Hourly forecast" ng-controller="HourlyCtrl" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header w-bck">
+        <div class="list">
+            <div ng-repeat="hour in vm.hourly.list">
+                <div class="item item-divider item-dark" style="font-size: 20px !important;">
+                    {{hour.dt}}
+                </div>
+                <div class="row">
+                    <i class="icon icon-left ion-thermometer w"></i>
+                    <div class="col col-25 xs">{{hour.main.temp | number:1}} °C</div>
+                    <div class="col col-25"><img ng-src="{{hour.weather.icon}}"></div>
+                    <div class="col col-45 ">{{hour.weather[0].description}}</div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <ion-tabs class="tabs-stable ">
+        <ion-tab title="Now" href="#/app/home">
+            <ion-nav-view name="tab-leagues"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Hourly" href="#/app/hourly">
+            <ion-nav-view name="tab-myteams"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Daily" href="#/app/forecast">
+            <ion-nav-view name="tab-myteams"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>

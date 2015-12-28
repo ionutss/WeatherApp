@@ -76,6 +76,15 @@ angular.module('weather-app', ['ionic', 'ngCordova'])
 				templateUrl: "templates/locations.html"
 			}
 		}
+	})
+
+	.state('app.feedback', {
+		url: "/feedback",
+		views: {
+			"home": {
+				templateUrl: "templates/feedback.html"
+			}
+		}
 	});
 
 	$urlRouterProvider.otherwise('/app/home');
